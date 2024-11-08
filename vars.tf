@@ -30,9 +30,9 @@ variable "billing_code" {
 }
 
 variable "vpc_public_subnets_cidr" {
-    type = list(string)
-    description = "CIDR Block for Public Subnets in VPC"
-    default = ["10.0.0.0/24", "10.0.1.0/24"]
+  type        = list(string)
+  description = "CIDR Block for Public Subnets in VPC"
+  default     = ["10.0.0.0/24", "10.0.1.0/24"]
 }
 
 variable "vpc_cidr_block" {
