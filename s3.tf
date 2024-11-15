@@ -50,9 +50,10 @@ resource "aws_s3_bucket_policy" "web_bucket" {
 }
 
 resource "aws_s3_object" "website" {
+  for_each = local.website_content
   bucket = aws_s3_bucket.web_bucket.bucket
-  key    = "/website/index.html"
-  source = "./website/index.html"
+  key    = each.value
+  source = ".${each.value}"
 
   tags = local.common_tags
 

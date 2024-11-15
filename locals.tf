@@ -6,6 +6,12 @@ locals {
   }
 
   s3_bucket_name = "corporate-web-app-${random_integer.s3.result}"
+
+  website_content = {
+    website = "/website/index.html"
+    logo = "/website/Globo_logo_Vert.png"
+  }
+  
 }
 
 resource "random_integer" "s3" {

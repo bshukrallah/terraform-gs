@@ -13,6 +13,18 @@ variable "instance_type" {
   }
 }
 
+variable "vpc_public_subnet_count" {
+  type = number
+  description = "Number of public subnets to create"
+  default = 2
+}
+
+variable "instance_count" {
+  type = number
+  description = "Number of public subnets to create"
+  default = 2
+}
+
 variable "company" {
   type        = string
   description = "Company Name Tag"
