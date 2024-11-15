@@ -14,15 +14,15 @@ variable "instance_type" {
 }
 
 variable "vpc_public_subnet_count" {
-  type = number
+  type        = number
   description = "Number of public subnets to create"
-  default = 2
+  default     = 2
 }
 
 variable "instance_count" {
-  type = number
+  type        = number
   description = "Number of public subnets to create"
-  default = 2
+  default     = 2
 }
 
 variable "company" {
@@ -41,14 +41,20 @@ variable "billing_code" {
   description = "Billing Code Tag"
 }
 
-variable "vpc_public_subnets_cidr" {
-  type        = list(string)
-  description = "CIDR Block for Public Subnets in VPC"
-  default     = ["10.0.0.0/24", "10.0.1.0/24"]
-}
-
 variable "vpc_cidr_block" {
   type        = string
   description = "Base CIDR Block for VPC"
   default     = "10.0.0.0/16"
+}
+
+variable "naming_prefix" {
+  type        = string
+  description = "Naming prefix for all resources"
+  default     = "corp-app"
+}
+
+variable "environment" {
+  type        = string
+  description = "Environment for the resources"
+  default     = "dev"
 }
