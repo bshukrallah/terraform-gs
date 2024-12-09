@@ -1,0 +1,13 @@
+stages:
+  - test
+
+include:
+    - template: Security/SAST.gitlab-ci.yml
+
+sast:
+  stage: test
+  tags:
+    - CICD
+  variables:
+    SAST_EXCLUDED_PATHS: "Content/, lfs/, Config/"
+    SAST_EXPERIMENTAL_TARGETS: "Source/**/*"
